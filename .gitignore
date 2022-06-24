@@ -1,1 +1,4 @@
 .idea
+/SQL_Paypal/node_modules/
+/SQL_User/node_modules/
+/SQL_Paypal/.env
