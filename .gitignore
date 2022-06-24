@@ -5,3 +5,5 @@
 /SQL_DeliveryAddress/.env
 /SQL_Paypal/node_modules/
 /SQL_Paypal/.env
+/SQL_BillingAddress/.env
+/SQL_BillingAddress/node_modules/
