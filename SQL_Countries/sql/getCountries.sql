@@ -1,0 +1,2 @@
+SELECT [Countries].*
+FROM [Countries]
