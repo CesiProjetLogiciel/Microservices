@@ -9,3 +9,5 @@
 /SQL_BillingAddress/node_modules/
 /SQL_Countries/.env
 /SQL_Countries/node_modules/
+/SQL_UserTypes/.env
+/SQL_UserTypes/node_modules/
