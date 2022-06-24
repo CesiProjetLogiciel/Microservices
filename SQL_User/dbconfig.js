@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 const config = {
     server: 'DESKTOP-LQN9T82',
     authentication: {
         type: 'default',
         options: {
-            userName: 'app generic',
-            password: 'app generic',
+            userName: process.env.LOGIN,
+            password: process.env.PASSWORD,
         }
     },
     options: {
