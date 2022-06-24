@@ -1,0 +1,2 @@
+SELECT [UserTypes].*
+FROM [UserTypes]
