@@ -1,0 +1,7 @@
+SET XACT_ABORT ON;
+BEGIN TRANSACTION;
+
+DELETE FROM [Countries]
+WHERE [Countries].[id] = @countryId
+
+COMMIT;
