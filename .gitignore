@@ -1,6 +1,7 @@
 .idea
-/SQL_Paypal/node_modules/
 /SQL_User/node_modules/
-/SQL_Paypal/.env
-/SQL_DeliveryAddress/node_modules/
 /SQL_User/.env
+/SQL_DeliveryAddress/node_modules/
+/SQL_DeliveryAddress/.env
+/SQL_Paypal/node_modules/
+/SQL_Paypal/.env
