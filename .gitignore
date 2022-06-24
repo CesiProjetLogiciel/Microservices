@@ -1,1 +1,3 @@
 .idea
+/SQL_BillingAddress/.env
+/SQL_BillingAddress/node_modules/
