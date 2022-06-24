@@ -61,7 +61,7 @@ async  function  addPaypal(paypal) {
         let  pool = await  sql.connect(config);
         let  insertPaypal = await  pool.request()
             .input('Paypal', sql.NVarChar, paypal.Paypal)
-            .input('idUser', sql.NVarChar, paypal.idUser)
+            .input('idUser', sql.Int, paypal.idUser)
             .query(getQuery('./sql/addPaypal.sql'));
         return  insertPaypal.recordsets;
     }
@@ -77,7 +77,7 @@ async  function  updatePaypal(paypalId, paypal) {
         let  insertPaypal = await  pool.request()
             .input('paypalId', sql.Int, paypalId)
             .input('Paypal', sql.NVarChar, paypal.Paypal)
-            .input('idUser', sql.NVarChar, paypal.idUser)
+            .input('idUser', sql.Int, paypal.idUser)
             .query(getQuery('./sql/updatePaypal.sql'));
         return  insertPaypal.recordsets;
     }
