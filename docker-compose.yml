@@ -98,3 +98,16 @@ services:
         deploy:
             restart_policy:
                 condition: always
+    MongoDB_Product:
+        image: microservices:MongoDB_Product
+        build:
+            context: ./MongoDB_Product
+        command: node index.js 
+        environment:
+            - PORT=9082
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 9082:9082
+        deploy:
+            restart_policy:
+                condition: always
