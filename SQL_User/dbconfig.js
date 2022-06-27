@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const config = {
-    server: 'DESKTOP-LQN9T82',
+    server: process.env.DATABASE_URL,
     authentication: {
         type: 'default',
         options: {
