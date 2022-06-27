@@ -22,7 +22,7 @@ router.route('/restaurants/:id/products')
         const data = new Model({
             name: req.body.name,
             description: req.body.description,
-            Prix: req.body.Prix,
+            Price: req.body.Price,
             Image: req.body.Image
         })
         const options = { new: true };
