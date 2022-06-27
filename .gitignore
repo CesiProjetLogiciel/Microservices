@@ -13,3 +13,5 @@
 /SQL_UserTypes/node_modules/
 /MongoBDRestaurant/node_modules/
 /MongoBDRestaurant/.env
+/MongoDB_Product/node_modules
+/MongoDB_Product/.env
