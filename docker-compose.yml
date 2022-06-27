@@ -1,0 +1,87 @@
+version: '3.8'
+        
+services: 
+    SQL_User:
+        image: microservices:SQL_User
+        build:
+            context: ./SQL_User
+        command: node app.js  
+        environment:
+            - LOGIN=app generic
+            - PASSWORD=app generic
+            - PORT=8081
+        ports:
+            - 8081:8081
+        deploy:
+            restart_policy:
+                condition: always
+    SQL_Paypal:
+        image: microservices:SQL_Paypal
+        build:
+            context: ./SQL_Paypal
+        command: node app.js 
+        environment:
+            - LOGIN=app payment
+            - PASSWORD=app payment
+            - PORT=8082
+        ports:
+            - 8082:8082
+        deploy:
+            restart_policy:
+                condition: always
+    SQL_DeliveryAddress:
+        image: microservices:SQL_DeliveryAddress
+        build:
+            context: ./SQL_DeliveryAddress
+        command: node app.js 
+        environment:
+            - LOGIN=app generic
+            - PASSWORD=app generic
+            - PORT=8083
+        ports:
+            - 8083:8083
+        deploy:
+            restart_policy:
+                condition: always
+    SQL_BillingAddress:
+        image: microservices:SQL_BillingAddress
+        build:
+            context: ./SQL_BillingAddress
+        command: node app.js 
+        environment:
+            - LOGIN=app generic
+            - PASSWORD=app generic
+            - PORT=8084
+        ports:
+            - 8084:8084
+        deploy:
+            restart_policy:
+                condition: always
+    SQL_Countries:
+        image: microservices:SQL_Countries
+        build:
+            context: ./SQL_Countries
+        command: node app.js 
+        environment:
+            - LOGIN=app generic
+            - PASSWORD=app generic
+            - PORT=8085
+        ports:
+            - 8085:8085
+        deploy:
+            restart_policy:
+                condition: always
+    SQL_UserTypes:
+        image: microservices:SQL_UserTypes
+        build:
+            context: ./SQL_UserTypes
+        command: node app.js 
+        environment:
+            - LOGIN=app generic
+            - PASSWORD=app generic
+            - PORT=8086
+        ports:
+            - 8086:8086
+        deploy:
+            restart_policy:
+                condition: always
