@@ -37,7 +37,7 @@ router.get('/restaurants', async (req, res) => {
     }
 })
 
-//Get by ID Method
+//Get by Name Method
 router.get('/restaurants/:name', async (req, res) => {
     try{
         const data = await Model.find({"name": req.params.name});
@@ -49,7 +49,7 @@ router.get('/restaurants/:name', async (req, res) => {
 })
 
 //Update by ID Method
-router.patch('/update/:id', async (req, res) => {
+router.patch('/restaurants/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
