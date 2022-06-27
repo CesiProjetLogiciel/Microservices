@@ -1,3 +1,4 @@
 .idea
 
 /MongoBDRestaurant/node_modules/
+/MongoBDRestaurant/.env
