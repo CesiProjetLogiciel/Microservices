@@ -1,1 +1,3 @@
 .idea
+/MongoDB_Product/node_modules
+/MongoDB_Product/.env
