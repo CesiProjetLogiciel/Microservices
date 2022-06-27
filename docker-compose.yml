@@ -85,3 +85,16 @@ services:
         deploy:
             restart_policy:
                 condition: always
+    MongoDB_Restaurant:
+        image: microservices:MongoDB_Restaurant
+        build:
+            context: ./MongoBDRestaurant
+        command: node index.js 
+        environment:
+            - PORT=9081
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 9081:9081
+        deploy:
+            restart_policy:
+                condition: always

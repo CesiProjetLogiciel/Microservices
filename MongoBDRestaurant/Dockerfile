@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 8080/tcp
 
-CMD [ "node", "app.js" ]
+CMD [ "node", "index.js" ]
