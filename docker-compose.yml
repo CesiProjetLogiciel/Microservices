@@ -10,6 +10,7 @@ services:
             - LOGIN=app generic
             - PASSWORD=app generic
             - PORT=8081
+            - DATABASE_URL=DESKTOP-LQN9T82
         ports:
             - 8081:8081
         deploy:
@@ -24,6 +25,7 @@ services:
             - LOGIN=app payment
             - PASSWORD=app payment
             - PORT=8082
+            - DATABASE_URL=DESKTOP-LQN9T82
         ports:
             - 8082:8082
         deploy:
@@ -38,6 +40,7 @@ services:
             - LOGIN=app generic
             - PASSWORD=app generic
             - PORT=8083
+            - DATABASE_URL=DESKTOP-LQN9T82
         ports:
             - 8083:8083
         deploy:
@@ -52,6 +55,7 @@ services:
             - LOGIN=app generic
             - PASSWORD=app generic
             - PORT=8084
+            - DATABASE_URL=DESKTOP-LQN9T82
         ports:
             - 8084:8084
         deploy:
@@ -66,6 +70,7 @@ services:
             - LOGIN=app generic
             - PASSWORD=app generic
             - PORT=8085
+            - DATABASE_URL=DESKTOP-LQN9T82
         ports:
             - 8085:8085
         deploy:
@@ -80,6 +85,7 @@ services:
             - LOGIN=app generic
             - PASSWORD=app generic
             - PORT=8086
+            - DATABASE_URL=DESKTOP-LQN9T82
         ports:
             - 8086:8086
         deploy:
