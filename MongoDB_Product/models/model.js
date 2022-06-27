@@ -13,7 +13,7 @@ const dataSchemaProduct = new mongoose.Schema({
         required: false,
         type: String
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     }
@@ -47,7 +47,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
         required: false,
         type: String
     },
-    Categorie: {
+    Category: {
         required: true,
         type: String
     },
