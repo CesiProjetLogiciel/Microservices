@@ -56,7 +56,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
         type: String
     },
     description: {
-        required: true,
+        required: false,
         type: String
     },
     Categorie: {

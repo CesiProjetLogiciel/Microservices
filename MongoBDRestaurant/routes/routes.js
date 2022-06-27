@@ -9,6 +9,7 @@ module.exports = router;
 //Post Method
 router.post('/restaurants', async (req, res) => {
     const data = new Model({
+        id: req.body.id,
         name: req.body.name,
         description: req.body.description,
         Categorie: req.body.Categorie,
@@ -37,10 +38,10 @@ router.get('/restaurants', async (req, res) => {
     }
 })
 
-//Get by Name Method
-router.get('/restaurants/:name', async (req, res) => {
+//Get by Id Method
+router.get('/restaurants/:id', async (req, res) => {
     try{
-        const data = await Model.find({"name": req.params.name});
+        const data = await Model.find({"id": req.params.id});
         res.json(data)
     }
     catch(error){
