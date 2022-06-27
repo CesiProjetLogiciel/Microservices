@@ -7,9 +7,9 @@ const Model = require('../models/model');
 module.exports = router;
 
 //Post Method
-router.post('/restaurants', async (req, res) => {
+router.route('/restaurants')
+    .post(async (req, res) => {
     const data = new Model({
-        id: req.body.id,
         name: req.body.name,
         description: req.body.description,
         Category: req.body.Category,
@@ -26,9 +26,7 @@ router.post('/restaurants', async (req, res) => {
         res.status(400).json({message: error.message})
     }
 })
-
-//Get all Method
-router.get('/restaurants', async (req, res) => {
+    .get(async (req, res) => {
     try{
         const data = await Model.find();
         res.json(data)
@@ -39,18 +37,17 @@ router.get('/restaurants', async (req, res) => {
 })
 
 //Get by Id Method
-router.get('/restaurants/:id', async (req, res) => {
+router.route('/restaurants/:id')
+    .get(async (req, res) => {
     try{
-        const data = await Model.find({"id": req.params.id});
+        const data = await Model.find({_id: req.params.id});
         res.json(data)
     }
     catch(error){
         res.status(500).json({message: error.message})
     }
 })
-
-//Update by ID Method
-router.put('/restaurants/:id', async (req, res) => {
+    .put(async (req, res) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
@@ -66,13 +63,11 @@ router.put('/restaurants/:id', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 })
-
-//Delete by ID Method
-router.delete('/delete/:id', async (req, res) => {
+    .delete(async (req, res) => {
     try {
         const id = req.params.id;
         const data = await Model.findByIdAndDelete(id)
-        res.send(`Document with ${data.name} has been deleted..`)
+        res.send([])
     }
     catch (error) {
         res.status(400).json({ message: error.message })
