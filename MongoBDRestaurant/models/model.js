@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const dataSchemaProduct = new mongoose.Schema({
-    id: {
-        required: true,
-        type: Number
-    },
     name: {
         required: true,
         type: String
@@ -24,10 +20,6 @@ const dataSchemaProduct = new mongoose.Schema({
 });
 
 const dataSchemaMenu = new mongoose.Schema({
-    id: {
-        required: true,
-        type: Number
-    },
     name: {
         required: true,
         type: String
@@ -47,10 +39,6 @@ const dataSchemaMenu = new mongoose.Schema({
 });
 
 const dataSchemaRestaurant = new mongoose.Schema({
-    id: {
-        required: true,
-        type: Number
-    },
     name: {
         required: true,
         type: String
