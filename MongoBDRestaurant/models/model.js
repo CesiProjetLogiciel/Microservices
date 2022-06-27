@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const dataSchemaProduit = new mongoose.Schema({
+const dataSchemaProduct = new mongoose.Schema({
     id: {
         required: true,
-        type: String
+        type: Number
     },
     name: {
         required: true,
@@ -17,7 +17,7 @@ const dataSchemaProduit = new mongoose.Schema({
         required: false,
         type: String
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     }
@@ -26,17 +26,17 @@ const dataSchemaProduit = new mongoose.Schema({
 const dataSchemaMenu = new mongoose.Schema({
     id: {
         required: true,
-        type: String
+        type: Number
     },
     name: {
         required: true,
         type: String
     },
-    Produits: {
+    Products: {
         required: true,
-        type: [dataSchemaProduit]
+        type: [dataSchemaProduct]
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     },
@@ -49,7 +49,7 @@ const dataSchemaMenu = new mongoose.Schema({
 const dataSchemaRestaurant = new mongoose.Schema({
     id: {
         required: true,
-        type: String
+        type: Number
     },
     name: {
         required: true,
@@ -59,7 +59,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
         required: false,
         type: String
     },
-    Categorie: {
+    Category: {
         required: true,
         type: String
     },
@@ -68,9 +68,9 @@ const dataSchemaRestaurant = new mongoose.Schema({
         type: String
     },
 
-    Produit: [dataSchemaProduit]
+    Product: [dataSchemaProduct]
     ,
-    Menu: [dataSchemaProduit]
+    Menu: [dataSchemaProduct]
 });
 
 module.exports = mongoose.model('Data', dataSchemaRestaurant)

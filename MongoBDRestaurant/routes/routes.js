@@ -12,9 +12,9 @@ router.post('/restaurants', async (req, res) => {
         id: req.body.id,
         name: req.body.name,
         description: req.body.description,
-        Categorie: req.body.Categorie,
+        Category: req.body.Category,
         Image: req.body.Image,
-        Produit: req.body.Produit,
+        Product: req.body.Product,
         Menu: req.body.Menu
     })
 
