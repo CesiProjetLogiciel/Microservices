@@ -27,3 +27,5 @@
 /Payment/.env
 /Statistics/node_modules
 /Statistics/.env
+/MongoDB_Notifications/node_modules/
+/MongoDB_Notifications/.env
