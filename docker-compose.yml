@@ -117,3 +117,16 @@ services:
         deploy:
             restart_policy:
                 condition: always
+    MongoDB_Menu:
+        image: microservices:MongoDB_Menu
+        build:
+            context: ./MongoDB_Menu
+        command: node index.js 
+        environment:
+            - PORT=9083
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 9083:9083
+        deploy:
+            restart_policy:
+                condition: always
