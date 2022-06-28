@@ -1,1 +1,3 @@
 .idea
+/MongoDB_Order/node_modules
+/MongoDB_Order/.env
