@@ -15,3 +15,5 @@
 /MongoBDRestaurant/.env
 /MongoDB_Product/node_modules
 /MongoDB_Product/.env
+/MongoDB_Menu/node_modules
+/MongoDB_Menu/.env
