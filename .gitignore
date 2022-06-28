@@ -1,1 +1,3 @@
 .idea
+/Payment/node_modules
+/Payment/.env
