@@ -1,1 +1,3 @@
 .idea
+/MongoDB_Logs/node_modules
+/MongoDB_Logs/.env
