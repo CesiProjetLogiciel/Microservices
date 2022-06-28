@@ -5,11 +5,11 @@ const router = express.Router()
 const Model = require('../models/model');
 
 module.exports = router;
-router.route('/deliverys/')
+router.route('/deliveries/')
 //Get all Method
     .get(async (req, res) => {
     try{
-        const data = await Model.Data.find({"DeliveryMan": null, "Statuts": 2});
+        const data = await Model.Data.find({"DeliveryMan": null, "Status": 2});
         res.json(data)
     }
     catch(error){
@@ -18,10 +18,10 @@ router.route('/deliverys/')
 })
 
 //Get by Id Method
-router.route('/deliverys/:id')
+router.route('/deliveries/:id')
     .get(async (req, res) => {
     try{
-        const data = await Model.Data.find({_id: req.params.id, "DeliveryMan": null, "Statuts": 2});
+        const data = await Model.Data.find({_id: req.params.id});
         res.json(data)
     }
     catch(error){
