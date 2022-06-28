@@ -130,3 +130,29 @@ services:
         deploy:
             restart_policy:
                 condition: always
+    MongoDB_Order:
+        image: microservices:MongoDB_Order
+        build:
+            context: ./MongoDB_Order
+        command: node index.js 
+        environment:
+            - PORT=9084
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 9084:9084
+        deploy:
+            restart_policy:
+                condition: always
+    MongoDB_Delivery:
+        image: microservices:MongoDB_Delivery
+        build:
+            context: ./MongoDB_Delivery
+        command: node index.js 
+        environment:
+            - PORT=9085
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 9085:9085
+        deploy:
+            restart_policy:
+                condition: always
