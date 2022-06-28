@@ -182,3 +182,16 @@ services:
         deploy:
             restart_policy:
                 condition: always
+    Statistics:
+        image: microservices:Statistics
+        build:
+            context: ./Statistics
+        command: node index.js 
+        environment:
+            - PORT=10082
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 10082:10082
+        deploy:
+            restart_policy:
+                condition: always
