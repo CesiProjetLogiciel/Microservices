@@ -23,3 +23,5 @@
 /MongoDB_Delivery/.env
 /MongoDB_Logs/node_modules
 /MongoDB_Logs/.env
+/Payment/node_modules
+/Payment/.env
