@@ -17,3 +17,5 @@
 /MongoDB_Product/.env
 /MongoDB_Menu/node_modules
 /MongoDB_Menu/.env
+/MongoDB_Order/node_modules
+/MongoDB_Order/.env
