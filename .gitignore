@@ -1,1 +1,3 @@
 .idea
+/MongoDB_Menu/node_modules
+/MongoDB_Menu/.env
