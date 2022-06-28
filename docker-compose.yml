@@ -156,3 +156,29 @@ services:
         deploy:
             restart_policy:
                 condition: always
+    MongoDB_Logs:
+        image: microservices:MongoDB_Logs
+        build:
+            context: ./MongoDB_Logs
+        command: node index.js 
+        environment:
+            - PORT=9087
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 9087:9087
+        deploy:
+            restart_policy:
+                condition: always
+    Payment:
+        image: microservices:Payment
+        build:
+            context: ./Payment
+        command: node index.js 
+        environment:
+            - PORT=10081
+            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+        ports:
+            - 10081:10081
+        deploy:
+            restart_policy:
+                condition: always
