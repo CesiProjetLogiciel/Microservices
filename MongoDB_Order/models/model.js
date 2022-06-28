@@ -13,7 +13,7 @@ const dataSchemaProduct = new mongoose.Schema({
         required: false,
         type: String
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     }
@@ -28,7 +28,7 @@ const dataSchemaMenu = new mongoose.Schema({
         required: true,
         type: [dataSchemaProduct]
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     },
@@ -47,7 +47,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
         required: false,
         type: String
     },
-    Categorie: {
+    Category: {
         required: true,
         type: String
     },
@@ -88,6 +88,11 @@ const dataSchemaOrder = new mongoose.Schema({
         type: Number
     },
     DeliveryAddress:
+    {
+        type: Number,
+        required: true
+    },
+    BillingAddress:
     {
         type: Number,
         required: true
