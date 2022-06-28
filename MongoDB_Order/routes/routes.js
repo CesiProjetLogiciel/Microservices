@@ -25,7 +25,8 @@ router.route('/orders/')
             Restaurant: {"id": req.body.restaurantSql,
                         "ObjectId": req.body.restaurantMongo},
             Price: req.body.price,
-            DeliveryAddress: req.body.deliveryAddress
+            DeliveryAddress: req.body.deliveryAddress,
+            BillingAddress: req.body.billingAddress
         })
 
         const result = await data.save()
