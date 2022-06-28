@@ -18,6 +18,14 @@ database.once('connected', () => {
 })
 const app = express();
 
+const router = express.Router();
+// add timestamps in front of log messages
+require('console-stamp')(console, '[HH:MM:ss.l]');
+router.use((request, response, next) => {
+    console.log(`${request.method} ${request.url} - ${request.ip}`);
+    next();
+});
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
