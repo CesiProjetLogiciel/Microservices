@@ -2,17 +2,17 @@ SET XACT_ABORT ON;
 BEGIN TRANSACTION;
 
 UPDATE [DeliveryAddress]
-SET [DeliveryAddress].[zipcode] = @Zipcode,
-    [DeliveryAddress].[city] = @City,
-    [DeliveryAddress].[address] = @Address,
-    [DeliveryAddress].[state] = @State,
-    [DeliveryAddress].[additionnalInfo] = @AdditionnalInfo,
-    [DeliveryAddress].[lastname] = @Lastname,
-    [DeliveryAddress].[firstname] = @Firstname,
-    [DeliveryAddress].[phonenumber] = @PhoneNumber,
-    [DeliveryAddress].[phonecountrycode] = @PhoneCountryCode,
-    [DeliveryAddress].[id_Countries] = @idCountry,
-    [DeliveryAddress].[id_Users] = @idUser
+SET [DeliveryAddress].[zipcode] = COALESCE(@Zipcode, [DeliveryAddress].[zipcode]),
+    [DeliveryAddress].[city] = COALESCE(@City, [DeliveryAddress].[city]),
+    [DeliveryAddress].[address] = COALESCE(@Address, [DeliveryAddress].[address]),
+    [DeliveryAddress].[state] = COALESCE(@State, [DeliveryAddress].[state]),
+    [DeliveryAddress].[additionnalInfo] = COALESCE(@AdditionnalInfo, [DeliveryAddress].[additionnalInfo]),
+    [DeliveryAddress].[lastname] = COALESCE(@Lastname, [DeliveryAddress].[lastname]),
+    [DeliveryAddress].[firstname] = COALESCE(@Firstname, [DeliveryAddress].[firstname]),
+    [DeliveryAddress].[phonenumber] = COALESCE(@PhoneNumber, [DeliveryAddress].[phonenumber]),
+    [DeliveryAddress].[phonecountrycode] = COALESCE(@PhoneCountryCode, [DeliveryAddress].[phonecountrycode]),
+    [DeliveryAddress].[id_Countries] = COALESCE(@idCountry, [DeliveryAddress].[id_Countries]),
+    [DeliveryAddress].[id_Users] = COALESCE(@idUser, [DeliveryAddress].[id_Users])
 WHERE [DeliveryAddress].[id] = @addressId
 
 COMMIT;
