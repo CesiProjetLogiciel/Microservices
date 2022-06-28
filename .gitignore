@@ -19,3 +19,5 @@
 /MongoDB_Menu/.env
 /MongoDB_Order/node_modules
 /MongoDB_Order/.env
+/MongoDB_Delivery/node_modules
+/MongoDB_Delivery/.env
