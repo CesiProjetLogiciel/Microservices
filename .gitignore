@@ -21,3 +21,5 @@
 /MongoDB_Order/.env
 /MongoDB_Delivery/node_modules
 /MongoDB_Delivery/.env
+/MongoDB_Logs/node_modules
+/MongoDB_Logs/.env
