@@ -1,1 +1,3 @@
 .idea
+/Statistics/node_modules
+/Statistics/.env
