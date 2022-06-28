@@ -25,3 +25,5 @@
 /MongoDB_Logs/.env
 /Payment/node_modules
 /Payment/.env
+/Statistics/node_modules
+/Statistics/.env
