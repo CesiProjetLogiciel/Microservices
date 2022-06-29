@@ -36,9 +36,10 @@ router.route('/restaurants/:id/products')
         })
         const options = { new: true };
 
-        const result = await Model.Data.findByIdAndUpdate(
-            req.params.id, {$push: {Product: data}}, options
-        )
+        var resto = await Model.Data.findById(req.params.id);
+        resto.Product.push(data);
+        resto.save();
+        let result = resto.Product[resto.Product.length-1]
 
         res.send(result)
     }
