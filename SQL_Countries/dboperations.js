@@ -71,6 +71,7 @@ async  function  addCountry(country) {
 }
 
 async  function  updateCountry(countryId, country) {
+    console.log(countryId, country);
     try {
         let  pool = await  sql.connect(config);
         let  insertCountry = await  pool.request()
