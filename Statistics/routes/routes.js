@@ -5,6 +5,14 @@ const router = express.Router()
 const Model = require('../models/model');
 
 module.exports = router;
+
+// add timestamps in front of log messages
+require('console-stamp')(console, '[HH:MM:ss.l]');
+router.use((request, response, next) => {
+    console.log(`${request.method} ${request.url} - ${request.ip}`);
+    next();
+});
+
 router
 //Post Method
     .get('/stats/restaurants/', async (req, res) => {
