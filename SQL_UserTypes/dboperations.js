@@ -70,6 +70,7 @@ async  function  addUserType(userType) {
 }
 
 async  function  updateUserType(userTypeId, userType) {
+    console.log(userTypeId, userType);
     try {
         let  pool = await  sql.connect(config);
         let  insertUserType = await  pool.request()
