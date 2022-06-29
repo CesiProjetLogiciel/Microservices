@@ -6,9 +6,17 @@ const Model = require('../models/model');
 
 module.exports = router;
 
+// add timestamps in front of log messages
+require('console-stamp')(console, '[HH:MM:ss.l]');
+router.use((request, response, next) => {
+    console.log(`${request.method} ${request.url} - ${request.ip}`);
+    next();
+});
+
 //Post Method
 router.route('/restaurants')
     .post(async (req, res) => {
+        console.log(req.body);
     const data = new Model({
         idSQL: req.body.idSQL,
         name: req.body.name,
@@ -49,6 +57,7 @@ router.route('/restaurants/:id')
     }
 })
     .put(async (req, res) => {
+        console.log(req.body);
     try {
         const id = req.params.id;
         const updatedData = req.body;
