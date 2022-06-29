@@ -26,6 +26,7 @@ router.use((request, response, next) => {
 router.route('/restaurants/:id/products')
 //Post Method
     .post(async (req, res) => {
+        console.log(req.body)
     try {
         const data = new Model({
             name: req.body.name,
@@ -72,6 +73,7 @@ router.route('/restaurants/:id/products/:idproduct')
 
 //Update by ID Method
     .put(async (req, res, next) => {
+        console.log(req.body)
     try {
         const id = req.params.id;
         const idproduct = req.params.idproduct;
