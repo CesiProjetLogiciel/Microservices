@@ -13,7 +13,7 @@ const dataSchemaProduct = new mongoose.Schema({
         required: false,
         type: String
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     }
@@ -28,7 +28,7 @@ const dataSchemaMenu = new mongoose.Schema({
         required: true,
         type: [dataSchemaProduct]
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     },
@@ -47,7 +47,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
         required: false,
         type: String
     },
-    Categorie: {
+    Category: {
         required: true,
         type: String
     },
@@ -62,7 +62,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
 });
 
 const dataSchemaOrder = new mongoose.Schema({
-    Statuts: {
+    Status: {
         type: Number,
         default: 1
     },
