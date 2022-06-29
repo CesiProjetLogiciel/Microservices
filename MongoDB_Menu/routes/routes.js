@@ -29,16 +29,17 @@ router.route('/restaurants/:id/menus')
     .post(async (req, res) => {
         console.log(req.body);
         try {
-            const data = new Model.Data({
+            const data = new Model.Menu({
                 name: req.body.name,
-                Price: req.body.price,
+                Price: req.body.Price,
                 description: req.body.description
             })
             const options = { new: true };
             
-            var result = await Model.Data.findByIdAndUpdate(
-                req.params.id, {$push: {Menu: data}}, options
-            )
+            var menu = await Model.Data.findById(req.params.id);
+            menu.Menu.push(data);
+            menu.save();
+            let result = menu.Menu[menu.Menu.length-1]
             
             res.send(result)
         }
