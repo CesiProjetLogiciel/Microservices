@@ -28,7 +28,7 @@ router.route('/restaurants/:id/products')
     .post(async (req, res) => {
         console.log(req.body)
     try {
-        const data = new Model({
+        const data = new Model.Product({
             name: req.body.name,
             description: req.body.description,
             Price: req.body.Price,
@@ -36,7 +36,7 @@ router.route('/restaurants/:id/products')
         })
         const options = { new: true };
 
-        const result = await Model.findByIdAndUpdate(
+        const result = await Model.Data.findByIdAndUpdate(
             req.params.id, {$push: {Product: data}}, options
         )
 
@@ -50,7 +50,7 @@ router.route('/restaurants/:id/products')
 //Get all Method
     .get(async (req, res) => {
     try{
-        const data = await Model.find({"_id": req.params.id}).select('Product').lean();
+        const data = await Model.Data.find({"_id": req.params.id}).select('Product').lean();
         res.json(data[0].Product)
     }
     catch(error){
@@ -62,7 +62,7 @@ router.route('/restaurants/:id/products')
 router.route('/restaurants/:id/products/:idproduct')
     .get(async (req, res) => {
     try{
-        var data = await Model.find({"_id": req.params.id}).select('Product').lean();
+        var data = await Model.Data.find({"_id": req.params.id}).select('Product').lean();
         var data2 = data[0].Product.find(element => element._id==req.params.idproduct);
         res.json(data2)
     }
@@ -80,7 +80,7 @@ router.route('/restaurants/:id/products/:idproduct')
         const updatedData = getUpdatedData(req.body);
         const options = { new: true };
 
-        const result = await Model.updateOne({"_id": id, "Product._id": idproduct}, {"$set": updatedData});
+        const result = await Model.Data.updateOne({"_id": id, "Product._id": idproduct}, {"$set": updatedData});
 
         res.json(result);
     }
@@ -95,7 +95,7 @@ router.route('/restaurants/:id/products/:idproduct')
     try {
         const id = req.params.id;
         const idproduct = req.params.idproduct;
-        const data = await Model.updateOne({_id: id}, {$pull: {Product:{_id:idproduct}}})
+        const data = await Model.Data.updateOne({_id: id}, {$pull: {Product:{_id:idproduct}}})
         res.send()
     }
     catch (error) {
