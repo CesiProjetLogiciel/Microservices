@@ -61,4 +61,8 @@ const dataSchemaRestaurant = new mongoose.Schema({
     Menu: [dataSchemaMenu]
 });
 
-module.exports = mongoose.model('Data', dataSchemaRestaurant)
+module.exports = {
+    Data: mongoose.model('Data', dataSchemaRestaurant),
+    Menu: mongoose.model('Menu', dataSchemaMenu),
+    Product: mongoose.model('Product', dataSchemaProduct)
+}
