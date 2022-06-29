@@ -81,6 +81,7 @@ async  function  addAddress(address) {
 }
 
 async  function  updateAddress(addressId, address) {
+    console.log(addressId, address);
     try {
         let  pool = await  sql.connect(config);
         let  updateAddress = await  pool.request()
