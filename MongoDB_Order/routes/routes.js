@@ -38,9 +38,9 @@ router.route('/orders/')
             BillingAddress: req.body.billingAddress
         })
 
-        const result = await data.save()
+        await data.save()
 
-        res.status(200).json(result)
+        res.status(200).json(data)
     }
     catch (error) {
         res.status(400).json({ message: error.message })
