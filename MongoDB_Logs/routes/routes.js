@@ -33,9 +33,9 @@ router.route('/logs/connections')
             Type: "connections"
         })
 
-        const result = await data.save()
+        await data.save()
 
-        res.status(200).json(result)
+        res.send(data);
     }
     catch (error) {
         res.status(400).json({ message: error.message })
