@@ -90,6 +90,7 @@ async  function  updateUser(userId, user) {
             userEmail = userId
             userId = -1
         }
+        console.log(userId, user);
 
         let  pool = await  sql.connect(config);
         let  insertUser = await  pool.request()
