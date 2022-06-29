@@ -28,8 +28,8 @@ router.route('/restaurants')
     })
 
     try {
-        const dataToSave = await data.save();
-        res.status(200).json(dataToSave)
+        await data.save();
+        res.send(data)
     }
     catch (error) {
         res.status(400).json({message: error.message})
