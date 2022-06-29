@@ -5,6 +5,13 @@ const nodeMailer = require('nodemailer');
 
 module.exports = router;
 
+// add timestamps in front of log messages
+require('console-stamp')(console, '[HH:MM:ss.l]');
+router.use((request, response, next) => {
+    console.log(`${request.method} ${request.url} - ${request.ip}`);
+    next();
+});
+
 let transporter = nodeMailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -51,6 +58,7 @@ function sendMessage(body){
 
 router
 .post('/notifications/users', async (req, res) => {
+    console.log(req.body);
     try {
         // sendEmail(req.body);
         const status = await sendMessage(req.body)
@@ -61,6 +69,7 @@ router
     }
 })
 .post('/notifications/restaurant', async (req, res) => {
+    console.log(req.body);
     try {
         //TODO notifs restaurants
         res.sendStatus(200);
@@ -70,6 +79,7 @@ router
     }
 })
 .post('/notifications/deliveryman', async (req, res) => {
+    console.log(req.body);
     try {
         //TODO notifs restaurants
         res.sendStatus(200);
