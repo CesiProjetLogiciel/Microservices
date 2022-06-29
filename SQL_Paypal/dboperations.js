@@ -33,7 +33,7 @@ async  function  getPaypal(paypalId) {
         let  paypal = await  pool.request()
             .input('paypalId', sql.Int, paypalId)
             .query(getQuery("./sql/getPaypal.sql"));
-        return  paypal.recordsets;
+        return  paypal.recordsets[0];
     }
     catch (error) {
         console.log(error);
