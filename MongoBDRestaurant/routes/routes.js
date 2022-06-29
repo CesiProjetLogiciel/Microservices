@@ -10,6 +10,7 @@ module.exports = router;
 router.route('/restaurants')
     .post(async (req, res) => {
     const data = new Model({
+        idSQL: req.body.idSQL,
         name: req.body.name,
         description: req.body.description,
         Category: req.body.Category,
