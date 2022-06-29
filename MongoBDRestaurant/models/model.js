@@ -39,7 +39,7 @@ const dataSchemaMenu = new mongoose.Schema({
 });
 
 const dataSchemaRestaurant = new mongoose.Schema({
-    idSQl: {
+    idSQL: {
         required: false,
         type: Number
     },
