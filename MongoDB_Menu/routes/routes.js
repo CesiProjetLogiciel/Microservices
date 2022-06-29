@@ -16,9 +16,18 @@ function getUpdatedData(body){
 }
 
 module.exports = router;
+
+// add timestamps in front of log messages
+require('console-stamp')(console, '[HH:MM:ss.l]');
+router.use((request, response, next) => {
+    console.log(`${request.method} ${request.url} - ${request.ip}`);
+    next();
+});
+
 router.route('/restaurants/:id/menus')
 //Post Method
     .post(async (req, res) => {
+        console.log(req.body);
         try {
             const data = new Model.Data({
                 name: req.body.name,
@@ -64,6 +73,7 @@ router.route('/restaurants/:id/menus/:idmenu')
 
 //Update by ID Method
     .put(async (req, res, next) => {
+        console.log(req.body);
         try {
             const id = req.params.id;
             const idmenu = req.params.idmenu;
@@ -98,6 +108,7 @@ router.route('/restaurants/:id/menus/:idmenu')
 
 //Update by ID Method
     .post(async (req, res, next) => {
+        console.log(req.body);
         try {
             const id = req.params.id;
             const idmenu = req.params.idmenu;
