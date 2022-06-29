@@ -32,7 +32,7 @@ async  function  getCountry(countryId) {
         let  country = await  pool.request()
             .input('countryId', sql.Int, countryId)
             .query(getQuery("./sql/getCountry.sql"));
-        return  country.recordsets;
+        return  country.recordsets[0];
     }
     catch (error) {
         console.log(error);
