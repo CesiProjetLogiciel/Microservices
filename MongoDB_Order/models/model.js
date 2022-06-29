@@ -62,7 +62,7 @@ const dataSchemaRestaurant = new mongoose.Schema({
 });
 
 const dataSchemaOrder = new mongoose.Schema({
-    Statuts: {
+    Status: {
         type: Number,
         default: 1
     },
