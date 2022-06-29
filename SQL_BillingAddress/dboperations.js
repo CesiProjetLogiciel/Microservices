@@ -33,7 +33,7 @@ async  function  getAddress(addressId) {
         let  address = await  pool.request()
             .input('addressId', sql.Int, addressId)
             .query(getQuery("./sql/getAddress.sql"));
-        return  address.recordsets;
+        return  address.recordsets[0];
     }
     catch (error) {
         console.log(error);
