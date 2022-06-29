@@ -32,7 +32,7 @@ async  function  getUserType(userTypeId) {
         let  userType = await  pool.request()
             .input('userTypeId', sql.Int, userTypeId)
             .query(getQuery("./sql/getUserType.sql"));
-        return  userType.recordsets;
+        return  userType.recordsets[0];
     }
     catch (error) {
         console.log(error);
