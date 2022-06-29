@@ -35,7 +35,7 @@ async  function  getUser(userId) {
             .input('userId', sql.Int, userId)
             .input('userEmail', sql.NVarChar, userEmail)
             .query(getQuery("./sql/getUser.sql"));
-        return  user.recordsets;
+        return  user.recordsets[0];
     }
     catch (error) {
         console.log(error);
