@@ -72,6 +72,7 @@ async  function  addPaypal(paypal) {
 }
 
 async  function  updatePaypal(paypalId, paypal) {
+    console.log(paypalId, paypal);
     try {
         let  pool = await  sql.connect(config);
         let  insertPaypal = await  pool.request()
