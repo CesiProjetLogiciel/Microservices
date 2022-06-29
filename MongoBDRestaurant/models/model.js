@@ -39,6 +39,10 @@ const dataSchemaMenu = new mongoose.Schema({
 });
 
 const dataSchemaRestaurant = new mongoose.Schema({
+    idSQl: {
+        required: false,
+        type: Number
+    },
     name: {
         required: true,
         type: String
