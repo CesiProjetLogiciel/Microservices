@@ -17,7 +17,8 @@ router.route('/deliveries/')
 //Get all Method
     .get(async (req, res) => {
     try{
-        const data = await Model.Data.find({"DeliveryMan": null, "Status": 2});
+        const data = await Model.Data.find({Status: {$in: [2, 3, 4]}});
+        console.log(data)
         res.json(data)
     }
     catch(error){
