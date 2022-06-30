@@ -41,7 +41,7 @@ router.route('/paypal')
 router.route('/paypal/:id')
     .get((request, response) => {
         Db.getPaypal(request.params.id).then((data) => {
-            if (data[0].length)
+            if (data.length)
                 response.status(200).json(data[0]);
             else
                 response.sendStatus(404)

@@ -41,7 +41,7 @@ router.route('/countries')
 router.route('/countries/:id')
     .get((request, response) => {
         Db.getCountry(request.params.id).then((data) => {
-            if (data[0].length)
+            if (data.length)
                 response.json(data[0]);
             else
                 response.sendStatus(404)

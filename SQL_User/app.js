@@ -31,7 +31,7 @@ router.route('/users')
     .post((request, response) => {
         let  user = { ...request.body }
         Db.addUser(user).then(data  => {
-            if (data[0].length)
+            if (data.length)
                 response.status(201).json(data[0]);
             else
                 response.sendStatus(400)
@@ -41,7 +41,7 @@ router.route('/users')
 router.route('/users/:id')
     .get((request, response) => {
         Db.getUser(request.params.id).then((data) => {
-            if (data[0].length)
+            if (data.length)
                 response.status(200).json(data[0]);
             else
                 response.sendStatus(404)
@@ -50,7 +50,7 @@ router.route('/users/:id')
     .put((request, response) => {
         let  user = { ...request.body }
         Db.updateUser(request.params.id, user).then(data  => {
-            if (data[0].length)
+            if (data.length)
                 response.status(201).json(data[0]);
             else
                 response.sendStatus(404)

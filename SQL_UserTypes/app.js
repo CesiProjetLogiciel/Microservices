@@ -41,7 +41,7 @@ router.route('/usertypes')
 router.route('/usertypes/:id')
     .get((request, response) => {
         Db.getUserType(request.params.id).then((data) => {
-            if (data[0].length)
+            if (data.length)
                 response.status(200).json(data[0]);
             else
                 response.sendStatus(404)

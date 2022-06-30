@@ -41,7 +41,7 @@ router.route('/billingaddress')
 router.route('/billingaddress/:id')
     .get((request, response) => {
         Db.getAddress(request.params.id).then((data) => {
-            if (data[0].length)
+            if (data.length)
                 response.json(data[0]);
             else
                 response.sendStatus(404)
