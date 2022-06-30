@@ -44,6 +44,7 @@ router.route('/restaurants/:id/menus')
             res.send(result)
         }
         catch (error) {
+            console.log(error.message);
             res.status(400).json({ message: error.message })
         }
     })
@@ -55,6 +56,7 @@ router.route('/restaurants/:id/menus')
             res.json(data[0].Menu)
         }
         catch(error){
+            console.log(error.message);
             res.status(500).json({message: error.message})
         }
     })
@@ -68,6 +70,7 @@ router.route('/restaurants/:id/menus/:idmenu')
             res.json(data2)
         }
         catch(error){
+            console.log(error.message);
             res.status(500).json({message: error.message})
         }
     })
@@ -86,6 +89,7 @@ router.route('/restaurants/:id/menus/:idmenu')
             res.json(result);
         }
         catch (error) {
+            console.log(error.message);
             res.status(400).json({ message: error.message })
         }
     })
@@ -100,6 +104,7 @@ router.route('/restaurants/:id/menus/:idmenu')
             res.send([])
         }
         catch (error) {
+            console.log(error.message);
             res.status(400).json({ message: error.message })
         }
     })
@@ -120,6 +125,7 @@ router.route('/restaurants/:id/menus/:idmenu')
             res.json(result);
         }
         catch (error) {
+            console.log(error.message);
             res.status(400).json({ message: error.message })
         }
     })
@@ -138,6 +144,7 @@ router.route('/restaurants/:id/menus/:idmenu/products/:idproduct')
             res.send([])
         }
         catch (error) {
+            console.log(error.message);
             res.status(400).json({ message: error.message })
         }
     })

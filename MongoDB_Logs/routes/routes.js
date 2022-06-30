@@ -38,6 +38,7 @@ router.route('/logs/connections')
         res.send(data);
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
@@ -49,6 +50,7 @@ router.route('/logs/connections')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })
@@ -68,6 +70,7 @@ router.route('/logs/components')
         res.status(200).json(result)
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
@@ -79,6 +82,7 @@ router.route('/logs/components')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })

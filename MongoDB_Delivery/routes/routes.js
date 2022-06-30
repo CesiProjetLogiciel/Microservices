@@ -21,6 +21,7 @@ router.route('/deliveries/')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })
@@ -33,6 +34,7 @@ router.route('/deliveries/:id')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })

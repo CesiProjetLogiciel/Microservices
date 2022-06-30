@@ -43,6 +43,7 @@ router.route('/orders/')
         res.status(200).json(data)
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
@@ -54,6 +55,7 @@ router.route('/orders/')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })
@@ -66,6 +68,7 @@ router.route('/orders/:id')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })
@@ -85,6 +88,7 @@ router.route('/orders/:id')
         res.send(result)
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })

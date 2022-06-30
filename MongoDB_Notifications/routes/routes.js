@@ -65,6 +65,7 @@ router
         res.sendStatus(status);
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
@@ -75,6 +76,7 @@ router
         res.sendStatus(200);
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
@@ -85,6 +87,7 @@ router
         res.sendStatus(200);
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })

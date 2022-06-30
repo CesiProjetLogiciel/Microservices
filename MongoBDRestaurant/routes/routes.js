@@ -32,6 +32,7 @@ router.route('/restaurants')
         res.send(data)
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({message: error.message})
     }
 })
@@ -41,6 +42,7 @@ router.route('/restaurants')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })
@@ -53,6 +55,7 @@ router.route('/restaurants/:id')
         res.json(data)
     }
     catch(error){
+        console.log(error.message);
         res.status(500).json({message: error.message})
     }
 })
@@ -70,6 +73,7 @@ router.route('/restaurants/:id')
         res.send(result)
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
@@ -80,6 +84,7 @@ router.route('/restaurants/:id')
         res.send([])
     }
     catch (error) {
+        console.log(error.message);
         res.status(400).json({ message: error.message })
     }
 })
