@@ -167,7 +167,7 @@ services:
             - MAIL_ADDRESS=noreply.cesieats@gmail.com
             - MAIL_PASSWORD=dtfsldsumearclcf
             - TWILIO_ACCOUNT_SID=ACdcbf716b21cf55a36d98d38b5fa75fd6
-            - TWILIO_AUTH_TOKEN=734528a98451da7572af31953cd4ffc4
+            - TWILIO_AUTH_TOKEN=c5382520e3e644e703dd068380688574
             - TWILIO_NUMBER=+19894991281
         ports:
             - 9086:9086
