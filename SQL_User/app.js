@@ -22,31 +22,46 @@ router.use((request, response, next) => {
 router.route('/users')
     .get((request, response) => {
         Db.getUsers().then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.status(200).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .post((request, response) => {
         let  user = { ...request.body }
         Db.addUser(user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(400)
         })
     })
 
 router.route('/users/:id')
     .get((request, response) => {
         Db.getUser(request.params.id).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.status(200).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .put((request, response) => {
         let  user = { ...request.body }
         Db.updateUser(request.params.id, user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .delete((request, response) => {
         Db.deleteUser(request.params.id).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
 

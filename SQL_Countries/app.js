@@ -22,31 +22,46 @@ router.use((request, response, next) => {
 router.route('/countries')
     .get((request, response) => {
         Db.getCountries(request.query).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .post((request, response) => {
         let  user = { ...request.body }
         Db.addCountry(user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(400)
         })
     })
 
 router.route('/countries/:id')
     .get((request, response) => {
         Db.getCountry(request.params.id).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .put((request, response) => {
         let  user = { ...request.body }
         Db.updateCountry(request.params.id, user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .delete((request, response) => {
         Db.deleteCountry(request.params.id).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
 

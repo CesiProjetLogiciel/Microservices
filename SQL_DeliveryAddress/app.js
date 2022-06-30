@@ -22,31 +22,46 @@ router.use((request, response, next) => {
 router.route('/deliveryaddress')
     .get((request, response) => {
         Db.getAddresses(request.query).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.status(200).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .post((request, response) => {
         let  user = { ...request.body }
         Db.addAddress(user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(400)
         })
     })
 
 router.route('/deliveryaddress/:id')
     .get((request, response) => {
         Db.getAddress(request.params.id).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.status(200).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .put((request, response) => {
         let  user = { ...request.body }
         Db.updateAddress(request.params.id, user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .delete((request, response) => {
         Db.deleteAddress(request.params.id).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
 

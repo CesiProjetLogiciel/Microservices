@@ -22,31 +22,46 @@ router.use((request, response, next) => {
 router.route('/paypal')
     .get((request, response) => {
         Db.getPaypals(request.query).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.status(200).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .post((request, response) => {
         let  user = { ...request.body }
         Db.addPaypal(user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(400)
         })
     })
 
 router.route('/paypal/:id')
     .get((request, response) => {
         Db.getPaypal(request.params.id).then((data) => {
-            response.json(data[0]);
+            if (data[0].length)
+                response.status(200).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .put((request, response) => {
         let  user = { ...request.body }
         Db.updatePaypal(request.params.id, user).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
     .delete((request, response) => {
         Db.deletePaypal(request.params.id).then(data  => {
-            response.status(201).json(data[0]);
+            if (data[0].length)
+                response.status(201).json(data[0]);
+            else
+                response.sendStatus(404)
         })
     })
 
