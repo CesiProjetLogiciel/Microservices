@@ -51,7 +51,11 @@ router.route('/restaurants')
 router.route('/restaurants/:id')
     .get(async (req, res) => {
     try{
-        const data = await Model.find({_id: req.params.id});
+        let data
+        if (!isNaN(req.params.id))
+            data = await Model.find({idSQL: req.params.id});
+        else
+            data = await Model.find({_id: req.params.id});
         res.json(data)
     }
     catch(error){
