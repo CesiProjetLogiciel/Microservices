@@ -7,10 +7,10 @@ services:
             context: ./SQL_User
         command: node app.js  
         environment:
-            - LOGIN=app generic
-            - PASSWORD=app generic
+            - LOGIN=
+            - PASSWORD=
             - PORT=8081
-            - DATABASE_URL=DESKTOP-LQN9T82
+            - DATABASE_URL=
         ports:
             - 8081:8081
         deploy:
@@ -22,10 +22,10 @@ services:
             context: ./SQL_Paypal
         command: node app.js 
         environment:
-            - LOGIN=app payment
-            - PASSWORD=app payment
+            - LOGIN=
+            - PASSWORD=
             - PORT=8082
-            - DATABASE_URL=DESKTOP-LQN9T82
+            - DATABASE_URL=
         ports:
             - 8082:8082
         deploy:
@@ -37,10 +37,10 @@ services:
             context: ./SQL_DeliveryAddress
         command: node app.js 
         environment:
-            - LOGIN=app generic
-            - PASSWORD=app generic
+            - LOGIN=
+            - PASSWORD=
             - PORT=8083
-            - DATABASE_URL=DESKTOP-LQN9T82
+            - DATABASE_URL=
         ports:
             - 8083:8083
         deploy:
@@ -52,10 +52,10 @@ services:
             context: ./SQL_BillingAddress
         command: node app.js 
         environment:
-            - LOGIN=app generic
-            - PASSWORD=app generic
+            - LOGIN=
+            - PASSWORD=
             - PORT=8084
-            - DATABASE_URL=DESKTOP-LQN9T82
+            - DATABASE_URL=
         ports:
             - 8084:8084
         deploy:
@@ -67,10 +67,10 @@ services:
             context: ./SQL_Countries
         command: node app.js 
         environment:
-            - LOGIN=app generic
-            - PASSWORD=app generic
+            - LOGIN=
+            - PASSWORD=
             - PORT=8085
-            - DATABASE_URL=DESKTOP-LQN9T82
+            - DATABASE_URL=
         ports:
             - 8085:8085
         deploy:
@@ -82,10 +82,10 @@ services:
             context: ./SQL_UserTypes
         command: node app.js 
         environment:
-            - LOGIN=app generic
-            - PASSWORD=app generic
+            - LOGIN=
+            - PASSWORD=
             - PORT=8086
-            - DATABASE_URL=DESKTOP-LQN9T82
+            - DATABASE_URL=
         ports:
             - 8086:8086
         deploy:
@@ -98,7 +98,7 @@ services:
         command: node index.js 
         environment:
             - PORT=9081
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 9081:9081
         deploy:
@@ -111,7 +111,7 @@ services:
         command: node index.js 
         environment:
             - PORT=9082
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 9082:9082
         deploy:
@@ -124,7 +124,7 @@ services:
         command: node index.js 
         environment:
             - PORT=9083
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 9083:9083
         deploy:
@@ -137,7 +137,7 @@ services:
         command: node index.js 
         environment:
             - PORT=9084
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 9084:9084
         deploy:
@@ -150,7 +150,7 @@ services:
         command: node index.js 
         environment:
             - PORT=9085
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 9085:9085
         deploy:
@@ -163,12 +163,12 @@ services:
         command: node index.js 
         environment:
             - PORT=9086
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
-            - MAIL_ADDRESS=noreply.cesieats@gmail.com
-            - MAIL_PASSWORD=dtfsldsumearclcf
-            - TWILIO_ACCOUNT_SID=ACdcbf716b21cf55a36d98d38b5fa75fd6
-            - TWILIO_AUTH_TOKEN=c5382520e3e644e703dd068380688574
-            - TWILIO_NUMBER=+19894991281
+            - DATABASE_URL=
+            - MAIL_ADDRESS=
+            - MAIL_PASSWORD=
+            - TWILIO_ACCOUNT_SID=
+            - TWILIO_AUTH_TOKEN=
+            - TWILIO_NUMBER=
         ports:
             - 9086:9086
         deploy:
@@ -181,7 +181,7 @@ services:
         command: node index.js 
         environment:
             - PORT=9087
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 9087:9087
         deploy:
@@ -194,7 +194,7 @@ services:
         command: node index.js 
         environment:
             - PORT=10081
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 10081:10081
         deploy:
@@ -207,7 +207,7 @@ services:
         command: node index.js 
         environment:
             - PORT=10082
-            - DATABASE_URL=mongodb+srv://admin:admin1@cesieats.u39giua.mongodb.net/test
+            - DATABASE_URL=
         ports:
             - 10082:10082
         deploy:
