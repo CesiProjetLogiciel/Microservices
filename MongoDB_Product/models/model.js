@@ -6,7 +6,7 @@ const dataSchemaProduct = new mongoose.Schema({
         type: String
     },
     description: {
-        required: true,
+        required: false,
         type: String
     },
     Image: {
@@ -26,9 +26,9 @@ const dataSchemaMenu = new mongoose.Schema({
     },
     Product: {
         required: true,
-        type: [dataSchemaProduct]
+        type: [{type: mongoose.Types.ObjectId, ref: "Restaurant.Product"}]
     },
-    Prix: {
+    Price: {
         required: true,
         type: Number
     },

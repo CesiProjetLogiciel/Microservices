@@ -36,7 +36,11 @@ router.route('/restaurants/:id/products')
         })
         const options = { new: true };
 
-        var resto = await Model.Data.findById(req.params.id);
+        let resto
+        if (!isNaN(req.params.id))
+            resto = await Model.Data.findOne({"idSQL": req.params.id});
+        else
+            resto = await Model.Data.findById(req.params.id);
         resto.Product.push(data);
         resto.save();
         let result = resto.Product[resto.Product.length-1]
@@ -84,7 +88,12 @@ router.route('/restaurants/:id/products/:idproduct')
         const updatedData = getUpdatedData(req.body);
         const options = { new: true };
 
-        const result = await Model.Data.updateOne({"_id": id, "Product._id": idproduct}, {"$set": updatedData});
+        let result
+
+        if (!isNaN(id))
+            result = await Model.Data.updateOne({"idSQL": id, "Product._id": idproduct}, {"$set": updatedData});
+        else
+            result =  await Model.Data.updateOne({"_id": id, "Product._id": idproduct}, {"$set": updatedData});
 
         res.json(result);
     }
